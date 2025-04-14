@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM python:3.9-slim-bullseye
 
 WORKDIR /app
 
@@ -28,11 +28,13 @@ RUN apt-get update && apt-get install -y \
 
 # Install Python dependencies
 RUN pip install --no-cache-dir \
-    pycoral==2.0.0 \
-    tflite-runtime \
     numpy \
     opencv-python-headless \
     pillow
+# Install pycoral and tflite-runtime from Coral's wheel
+RUN pip install --no-cache-dir \
+    https://github.com/google-coral/pycoral/releases/download/v2.0.0/pycoral-2.0.0-cp39-cp39-linux_aarch64.whl \
+    https://github.com/google-coral/pycoral/releases/download/v2.0.0/tflite_runtime-2.5.0.post1-cp39-cp39-linux_aarch64.whl
 
 # Copy your application code
 COPY . /app
