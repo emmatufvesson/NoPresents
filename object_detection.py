@@ -9,8 +9,8 @@ def main():
     # Model and labels paths
     model_path = "ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite"
     label_path = "coco_labels.txt"
-    # iPhone stream URL from Iriun (replace with your iPhone's IP)
-    stream_url = "http://10.0.1.16:5353"
+    # DroidCam stream URL
+    stream_url = "http://10.0.1.16:8081/video"
 
     # Load labels
     labels = read_label_file(label_path)
@@ -22,7 +22,7 @@ def main():
     # Initialize video stream
     cap = cv2.VideoCapture(stream_url)
     if not cap.isOpened():
-        print("Error: Could not open iPhone stream")
+        print("Error: Could not open DroidCam stream")
         return
 
     try:
