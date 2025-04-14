@@ -10,7 +10,7 @@ def main():
     model_path = "ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite"
     label_path = "coco_labels.txt"
     # iPhone stream URL from Iriun (replace with your iPhone's IP)
-    stream_url = "http://10.0.1.16:5353"
+    stream_url = "http://<iphone-ip>:5353"
 
     # Load labels
     labels = read_label_file(label_path)
