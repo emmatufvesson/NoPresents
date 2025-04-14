@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     libavformat-dev \
     libswscale-dev \
     libv4l-dev \
+    gnupg \
     && rm -rf /var/lib/apt/lists/*
 
 # Add Google Coral repository
