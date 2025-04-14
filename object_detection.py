@@ -9,6 +9,8 @@ def main():
     # Model and labels paths
     model_path = "ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite"
     label_path = "coco_labels.txt"
+    # iPhone stream URL from Iriun (replace with your iPhone's IP)
+    stream_url = "http://<iphone-ip>:5353"
 
     # Load labels
     labels = read_label_file(label_path)
@@ -17,10 +19,10 @@ def main():
     interpreter = make_interpreter(model_path)
     interpreter.allocate_tensors()
 
-    # Initialize USB webcam
-    cap = cv2.VideoCapture(0)
+    # Initialize video stream
+    cap = cv2.VideoCapture(stream_url)
     if not cap.isOpened():
-        print("Error: Could not open webcam")
+        print("Error: Could not open iPhone stream")
         return
 
     try:
@@ -50,8 +52,9 @@ def main():
 
             # Save frame
             cv2.imwrite("output_frame.jpg", frame)
+            print("Saved output_frame.jpg")
 
-            # Optional: Break loop (for non-headless, replace with cv2.imshow if X server available)
+            # Optional: Break loop
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
 
