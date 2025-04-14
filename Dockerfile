@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install Python dependencies
 RUN pip install --no-cache-dir \
-    numpy \
+    numpy==1.26.4 \
     opencv-python-headless \
     pillow
 # Install pycoral and tflite-runtime from Coral's wheel
