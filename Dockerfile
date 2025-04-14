@@ -8,8 +8,6 @@ RUN apt-get update && apt-get install -y \
     curl \
     usbutils \
     libusb-1.0-0-dev \
-    libcamera0 \
-    libepoxy0 \
     libjpeg-dev \
     libtiff5-dev \
     libavcodec-dev \
@@ -33,8 +31,7 @@ RUN pip install --no-cache-dir \
     tflite-runtime \
     numpy \
     opencv-python-headless \
-    pillow \
-    picamera2
+    pillow
 
 # Copy your application code
 COPY . /app
