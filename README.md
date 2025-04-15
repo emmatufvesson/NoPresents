@@ -1,8 +1,8 @@
 # NoPresents 
+My first attempt to set up Object Detection on my Raspberry Pi 5 with Google Coral USB Accelerator and the help of Docker. My goal with this project is to implement it with my cat flap and a servo motor to keep my cat from entering with prey in her mouth. Presents = Mice, Birds, Grasshoppers, Worms, Spiders ETC 🤮.
+Part of the course "Building AI course project".
 
-## My first attempt to set up Object Detection on my Raspberry Pi 5 with Google Coral USB Accelerator and the help of Docker. My goal with this project is to implement it with my cat flap and a servo motor to keep my cat from entering with prey in her mouth.
-
-## General idea
+## Summary
 I will try to set up object detection first, and train it to recognize when my cat has a prey in her mouth. When that works I will implement the servo motor as a "robot arm". It will keep the cat flap closed until my cat has proven she doesn't have a prey with her, then the "robot arm" will move and she can come in.
 
 ## Project specifications:
@@ -15,11 +15,7 @@ I will try to set up object detection first, and train it to recognize when my c
 * Docker
 
 ## Step by step guide:
-
-
-		--------------- PART ONE ---------------
-		-------SETTING UP THE RASPBERRY:--------
-		----------------------------------------
+### PART ONE - SETTING UP THE RASPBERRY
 
 1. DO A CLEAN INSTALL OF RASPBERRY PI OS (64-BIT) AND FLASH
 IT ONTO A SD CARD WITH RASPBERRY PI IMAGER. ADD USER CREDENTIALS
@@ -45,10 +41,7 @@ sudo apt update && sudo apt upgrade -y
 7. REBOOT:
 sudo reboot
 
-
-		--------------- PART TWO ---------------
-		-----------INSTALLING DOCKER:-----------
-		----------------------------------------
+### PART TWO - INSTALLING DOCKER
 
 1. TO INSTALL DOCKER RUN:
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -81,11 +74,7 @@ nano Dockerfile
 9. BUILD THE DOCKER IMAGE:
 docker build -t coral-object-detection .
 
-
-		--------------- PART THREE -------------
-		------- SET UP OBJECT DETECTION: -------
-		----------------------------------------
-
+### PART THREE - SET UP OBJECT DETECTION
 
 1. IN THE DIRECTORY YOU CREATED (MINE IS 'cod') CREATE A NEW FILE:
 nano object_detection.py
@@ -123,7 +112,6 @@ sudo apt install -y feh
 ls output_frame.jpg
 feh output_frame.jpg
 
-		--------------- PART FOUR ---------------
-		---------TRAINING MY OWN MODEL:----------
-		-----------------------------------------
+### PART FOUR - TRAINING MY OWN MODEL
 
+## TO BE CONTINUED SOON
