@@ -109,11 +109,21 @@ sudo apt install -y vlc
 7. TEST THE CAMERA STREAM:
 vlc http://10.0.1.16:8081/video
 
-5. RUN THE DOCKER CONTAINER WITH:
-docker rm -f coral-objdet
+8. RUN THE DOCKER CONTAINER WITH:
 docker run --name coral-objdet \
     --device=/dev/bus/usb:/dev/bus/usb \
     --network host \
     -v $(pwd):/app \
     coral-object-detection
+
+9. INSTALL FEH WITH:
+sudo apt install -y feh
+
+10. RUN:
+ls output_frame.jpg
+feh output_frame.jpg
+
+		--------------- PART FOUR ---------------
+		---------TRAINING MY OWN MODEL:----------
+		-----------------------------------------
 
