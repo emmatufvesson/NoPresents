@@ -54,13 +54,10 @@ def main():
             cv2.imwrite("output_frame.jpg", frame)
             print("Saved output_frame.jpg")
 
-            # Optional: Break loop
-            if cv2.waitKey(1) & 0xFF == ord("q"):
-                break
-
+    except KeyboardInterrupt:
+        print("Stopped by user")
     finally:
         cap.release()
-        cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
