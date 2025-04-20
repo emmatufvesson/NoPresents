@@ -74,6 +74,15 @@ nano Dockerfile
 9. BUILD THE DOCKER IMAGE:
 docker build -t coral-object-detection .
 
+### PART THREE INSTALL PORTAINER
+1. INSTALL PORTAINER WITH:
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+2. IN A BROWSER GO TO:
+https://10.0.1.20:9443
+
+3. 
+
 ### PART THREE - SET UP OBJECT DETECTION
 
 1. IN THE DIRECTORY YOU CREATED (MINE IS 'cod') CREATE A NEW FILE:
